@@ -1,0 +1,1 @@
+# tsconfig.json   // tsc编译配置文件,对目录下的所有ts文件进行编译

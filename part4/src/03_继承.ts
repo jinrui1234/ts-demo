@@ -1,0 +1,38 @@
+//继承：子类的方法会覆盖父类的方法
+(function () {
+    //父类
+    class animal {
+        name: string;
+        age: number;
+        constructor(name: string, age: number) {
+            this.name = name;
+            this.age = age;
+        }
+        sayHello(type: string) {
+            console.log(`${type}`);
+        }
+    }
+
+    //继承
+    class Cat extends animal {
+        constructor(name: string, age: number) {
+            super(name, age);
+        }
+        run() {
+            console.log(`跑`);
+        }
+    }
+    class Dog extends animal {
+        constructor(name: string, age: number) {
+            super(name, age);
+        }
+    }
+
+    const dog = new Dog('狗', 11);
+    const cat = new Cat('猫', 22);
+    console.log(dog, cat);
+
+    dog.sayHello("111111");
+    cat.sayHello("222222");
+    cat.run();
+})();

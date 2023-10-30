@@ -1,0 +1,44 @@
+// tsconfig.json   // tsc 命令编译配置文件,根据配置，对目录下的所有ts文件进行编译
+{
+    //编译器的选项
+    "compilerOptions": {
+        "module": "CommonJS", //模块化规范指定  
+        "target": "es5", // 编译的目标，比如ts编译成的js版本 , es5 es6 es7 es8 esNext(最新的版本)
+        // "lib": [] // 编译依赖的第三方库,一般情况下不改
+        "outDir": "./dist", //ts编译后的js文件输出目录
+        // "outFile": "./dist/app.js", //将所有编译后的js代码合并为一个文件，一般不用
+        "allowJs": false, // 是否允许编译文件目录下的js文件
+        "checkJs": false, // 是否检查js文件语法规范（js对ts的语法规范）
+        "removeComments": false, // 是否移除文件中的注释
+        "noEmit": false, // 不生成编译后的文件
+        "noEmitOnError": false, // 编译出错时不生成编译后的文件
+        "alwaysStrict": false, // 始终以严格模式检查编译后的文件
+        "noImplicitAny": true, // 是否不允许隐式的any类型
+        "noImplicitThis": true, // 是否不允许隐式的this类型
+        "strictNullChecks": true, // 是否严格检查null和undefined
+        // "strict": false, // 所有严格检查总开关
+        //     "moduleResolution": "node",
+        //     "sourceMap": true,
+        //     "baseUrl": "./",
+        //     "esModuleInterop": true,
+        //     "paths": {
+        //         "@/*": [
+        //             "./src/*"
+        //         ]
+        //     }
+    },
+    //指定编译的ts文件
+    "include": [
+        // "./src/**/*"
+        "../part2/**/*" //**-任意目录  *-任意文件
+    ],
+    //不编译的ts文件
+    "exclude": [
+        //"src/hello/**/*"    //hello下的文件不编译
+        "node_modules" //默认值
+    ],
+    //继承（引入）别的json文件配置
+    "extends": [],
+    //要编译的具体文件，一般用include
+    // "files": []
+}
